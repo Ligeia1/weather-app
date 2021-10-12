@@ -64,21 +64,18 @@ form.addEventListener("submit", showCity);
 function showTemperature(response) {
   console.log(response.data);
   let currentTemp = Math.round(response.data.main.temp);
-  let temperature = document.querySelector("#current-temperature");
-  temperature.innerHTML = `${currentTemp} °C`;
-  let tempMin = document.querySelector("#todays-min");
+  document.querySelector(
+    "#current-temperature"
+  ).innerHTML = `${currentTemp} °C`;
   let todaysMin = Math.round(response.data.main.temp_min);
-  tempMin.innerHTML = `${todaysMin} °C / `;
-  let tempMax = document.querySelector("#todays-max");
+  document.querySelector("#todays-min").innerHTML = `${todaysMin} °C / `;
   let todaysMax = Math.round(response.data.main.temp_max);
-  tempMax.innerHTML = `${todaysMax} °C`;
-  let windspeed = document.querySelector("#todays-wind");
+  document.querySelector("#todays-max").innerHTML = `${todaysMax} °C`;
   let todaysWind = Math.round(response.data.wind.speed);
-  windspeed.innerHTML = `${todaysWind} km/h`;
-  let weatherDescription = document.querySelector("#weather-descpription");
-  weatherDescription.innerHTML = response.data.weather[0].description;
-  let displayCity = document.querySelector(".current-city");
-  displayCity.innerHTML = response.data.name;
+  document.querySelector("#todays-wind").innerHTML = `${todaysWind} km/h`;
+  document.querySelector("#weather-descpription").innerHTML =
+    response.data.weather[0].description;
+  document.querySelector(".current-city").innerHTML = response.data.name;
 }
 
 function showCurrentPosition(position) {
