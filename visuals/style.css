@@ -1,0 +1,91 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: url("mountains.jpg");
+}
+
+h1 {
+  color: rgb(1, 1, 54);
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: 15px;
+  color: rgb(1, 1, 54, 0.8);
+}
+
+h3 {
+  color: rgb(1, 1, 54, 0.8);
+  font-size: 14px;
+}
+
+#current-location {
+  border-color: turquoise;
+  color: rgb(46, 106, 235);
+  transition: 150ms ease-in-out;
+}
+
+#current-location:hover {
+  background-color: rgb(46, 106, 235, 0.4);
+  border-color: rgb(55, 189, 175);
+  color: #fff;
+}
+
+.container {
+  width: 80%;
+  border: 1px solid turquoise;
+  border-radius: 8px;
+  padding: 0 30px 30px 30px;
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+
+.units {
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 6px;
+  padding-left: 6px;
+  vertical-align: top;
+  text-decoration: none;
+}
+
+.sun-icon {
+  color: rgb(235, 220, 11);
+}
+
+.cloud-sun-icon {
+  color: gray;
+}
+
+.rain-icon {
+  color: grey;
+}
+
+.current-weather {
+  font-size: 60px;
+}
+
+.searchbar {
+  width: 150px;
+  margin-right: 0;
+  width: 60%;
+}
+
+.d-flex {
+  margin: 20px 10px 10px 300px;
+  max-width: 80%;
+}
+
+.card {
+  background-color: rgba(38, 134, 102, 0.05);
+  font-size: 13px;
+  color: rgb(1, 1, 54, 0.8);
+}
+
+.searchbutton {
+  border-color: turquoise;
+  transition: 150ms ease-in-out;
+}
+
+.searchbutton:hover {
+  background-color: rgb(46, 106, 235, 0.4);
+  border-color: rgb(55, 189, 175);
+}
