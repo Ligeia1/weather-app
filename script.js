@@ -34,7 +34,7 @@ if (currentMinutes < 10) {
   currentMinutes = `0${currentMinutes}`;
 }
 
-let localTime = document.querySelector(".local-time");
+let localTime = document.querySelector("#local-time");
 if (currentHour < 10) {
   currentHour = `0${currentHour}`;
 } else {
@@ -44,22 +44,20 @@ if (currentHour < 10) {
 let localDate = document.querySelector(".current-day");
 localDate.innerHTML = `${currentDay}, ${currentMonth} ${currentDate}`;
 
-function showCity(event) {
-  event.preventDefault();
-  let displayedCity = document.querySelector(".current-city");
-  let searchInput = document.querySelector("#city-input");
-  if (searchInput.value) {
-    displayedCity.innerHTML = `${searchInput.value}`;
-  } else {
-    displayedCity.innerHTML = `Please type a city name`;
-  }
+function showCity(city) {
   let apiKey = "8c48afa47a9a9c24f3500c7039d50aaa";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showTemperature);
 }
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  showCity(city);
+}
 let form = document.querySelector("#search-city-form");
-form.addEventListener("submit", showCity);
+form.addEventListener("submit", handleSubmit);
 
 function showTemperature(response) {
   console.log(response.data);
@@ -94,3 +92,5 @@ function getPosition(event) {
 
 let currentPosition = document.querySelector("#current-location");
 currentPosition.addEventListener("click", getPosition);
+
+showCity("Hannover");
